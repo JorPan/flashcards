@@ -7,13 +7,9 @@ import "./App.css";
 function App() {
   const [userDecks, setUserDecks] = useState(initialDecks);
 
-  // const createNewDeck = () => {
-
-  // }
-
   return (
     <div className="App">
-      <SideBar userDecks={userDecks} />
+      <SideBar userDecks={userDecks} setUserDecks={setUserDecks} />
       <HomePage userDecks={userDecks} />
     </div>
   );

@@ -6,7 +6,23 @@ import { HiPhotograph, HiPlusCircle } from "react-icons/hi";
 import Deck from "../components/Deck";
 import "./SideBar.css";
 
-export default function SideBar({ userDecks }) {
+export default function SideBar({ userDecks, setUserDecks }) {
+  const createNewDeck = () => {
+    const newDeck = {
+      data: { name: "Click here to name your deck" },
+      content: [],
+    };
+    const currentDecks = userDecks;
+    setUserDecks([...currentDecks, newDeck]);
+  };
+
+  const removeDeck = (deck) => {
+    const updatedDeckList = userDecks.filter(
+      (currentDeck) => currentDeck !== deck
+    );
+    setUserDecks(updatedDeckList);
+  };
+
   return (
     <div className="sidebar">
       <div className="sidebar-header">
@@ -20,12 +36,17 @@ export default function SideBar({ userDecks }) {
           <GiStack className="sidebar-icon" />
         </div>
         <h1 className="sidebar-title">Flashcards</h1>
-        <HiPlusCircle className="add-deck-button" />
+        <HiPlusCircle className="add-deck-button" onClick={createNewDeck} />
       </div>
       <div className="separator"></div>
       {userDecks.length > 0
         ? userDecks.map((userDeck, i) => (
-            <Deck key={`deck ${i}`} index={i} deck={userDeck} />
+            <Deck
+              key={`deck ${i}`}
+              index={i}
+              deck={userDeck}
+              removeDeck={removeDeck}
+            />
           ))
         : null}
     </div>

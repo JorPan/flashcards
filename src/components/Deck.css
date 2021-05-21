@@ -19,3 +19,17 @@
   font-weight: bold;
   color: #3751ad;
 }
+
+.edit-deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-deck-name {
+  width: 90%;
+}
+
+.remove-deck-button {
+  cursor: pointer;
+}
