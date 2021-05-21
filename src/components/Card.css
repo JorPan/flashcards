@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+.small-card {
+  background: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  width: 300px;
+  height: 200px;
+  margin-left: 80px;
+  margin-top: 8px;
+  border-radius: 8px;
+  box-shadow: 2px 1px 1px rgb(209, 209, 209);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-card-center {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-card-separator {
+  height: 1px;
+  width: 40%;
+  background-color: black;
+  display: flex;
+}
+
+.swap-button {
+  cursor: pointer;
+  font-size: 24px;
+  border: 1px solid black;
+}
+
+.edit-card-side-choice {
+  font-size: 12px;
+  color: grey;
+}
+
+.small-card-buttons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.edit-button {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: rgb(193, 205, 216);
+  border-radius: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+.delete-button {
+  width: 1.5em;
+  height: 1.5em;
+  background-color: rgb(193, 205, 216);
+  border-radius: 100%;
+  padding: 0.5em;
+  cursor: pointer;
+  margin: 0.5em;
+}
+
+.quiz-card {
+  width: 50%;
+  height: 50%;
+  background-color: gray;
+}

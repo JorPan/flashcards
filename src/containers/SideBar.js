@@ -1,9 +1,9 @@
-// import { useState, useEffect } from "react";
-import { RiMenuLine, RiHome4Line, RiBook2Line } from "react-icons/ri";
-import { GiMagnifyingGlass, GiStack } from "react-icons/gi";
-import { ImLab } from "react-icons/im";
-import { HiPhotograph, HiPlusCircle } from "react-icons/hi";
+import { AiFillPlayCircle } from "react-icons/ai";
+import { HiPlusCircle, HiStop } from "react-icons/hi";
 import Deck from "../components/Deck";
+import IconBar from "./IconBar";
+import EditCard from "../components/EditCard";
+import Card from "../components/Card";
 import "./SideBar.css";
 
 export default function SideBar({
@@ -14,21 +14,20 @@ export default function SideBar({
   setAddQuestionsView,
   selectedDeck,
   setSelectedDeck,
+  setUserDecks,
+  addCard,
+  quizMode,
+  setQuizMode,
 }) {
   return (
     <div>
       {addQuestionsView === false ? (
         <div className="sidebar">
           <div className="sidebar-header">
-            <div className="sidebar-icon-bar">
-              <RiHome4Line className="sidebar-icon" />
-              <RiMenuLine className="sidebar-icon" />
-              <GiMagnifyingGlass className="sidebar-icon" />
-              <RiBook2Line className="sidebar-icon" />
-              <ImLab className="sidebar-icon" />
-              <HiPhotograph className="sidebar-icon" />
-              <GiStack className="sidebar-icon" />
-            </div>
+            <IconBar
+              setQuizMode={setQuizMode}
+              setAddQuestionsView={setAddQuestionsView}
+            />
             <h1 className="sidebar-title">Flashcards</h1>
             <HiPlusCircle className="add-deck-button" onClick={createNewDeck} />
           </div>
@@ -42,30 +41,44 @@ export default function SideBar({
               setAddQuestionsView={setAddQuestionsView}
               selectedDeck={selectedDeck}
               setSelectedDeck={setSelectedDeck}
+              userDecks={userDecks}
+              setUserDecks={setUserDecks}
+              addCard={addCard}
+              quizMode={quizMode}
+              setQuizMode={setQuizMode}
             />
           ))}
         </div>
       ) : (
         <div className="sidebar">
           <div className="sidebar-header">
-            <div className="sidebar-icon-bar">
-              <RiHome4Line
-                className="sidebar-icon"
-                onClick={() => setAddQuestionsView(false)}
-              />
-              <RiMenuLine className="sidebar-icon" />
-              <GiMagnifyingGlass className="sidebar-icon" />
-              <RiBook2Line className="sidebar-icon" />
-              <ImLab className="sidebar-icon" />
-              <HiPhotograph className="sidebar-icon" />
-              <GiStack
-                className="sidebar-icon"
-                onClick={() => setAddQuestionsView(false)}
-              />
-            </div>
+            <IconBar
+              setQuizMode={setQuizMode}
+              setAddQuestionsView={setAddQuestionsView}
+            />
             <h1 className="sidebar-title">{selectedDeck.data.name}</h1>
-            {/* <HiPlusCircle className="add-deck-button" onClick={createNewDeck} /> */}
+            <div className="deck-data">
+              <p className="deck-length">{selectedDeck.content.length} cards</p>
+              {quizMode === false ? (
+                <AiFillPlayCircle
+                  className="deck-button"
+                  onClick={() => setQuizMode(!quizMode)}
+                />
+              ) : (
+                <HiStop
+                  className="deck-button"
+                  onClick={() => setQuizMode(!quizMode)}
+                />
+              )}
+              <HiPlusCircle className="deck-button" onClick={addCard} />
+            </div>
           </div>
+          <div className="separator"></div>
+          {selectedDeck
+            ? selectedDeck.content.map((currentCard, i) => (
+                <Card key={i} currentCard={currentCard} cardNumber={i} />
+              ))
+            : null}
         </div>
       )}
     </div>

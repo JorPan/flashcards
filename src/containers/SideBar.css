@@ -29,8 +29,10 @@
 
 .sidebar-title {
   font-family: "Roboto", sans-serif;
-  font-size: 32px;
+  font-size: 24px;
   padding-left: 64px;
+  padding-top: 16px;
+  margin: auto;
 }
 
 .sidebar-icon {
@@ -56,8 +58,21 @@
   margin-right: 8px;
 }
 
+.deck-button {
+  width: 3em;
+  height: 3em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
 .separator {
   height: 1px;
   width: 100%;
   background-color: black;
+}
+
+.deck-data {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
 }

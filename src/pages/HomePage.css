@@ -4,9 +4,18 @@
   font-family: "Roboto", sans-serif;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 .home-page-title {
   font-size: 36px;
   font-weight: bold;
+}
+
+.selected-deck-title {
+  font-size: 24px;
+}
+
+.sidebar-block {
+  width: 400px;
 }
