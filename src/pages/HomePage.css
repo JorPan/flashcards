@@ -19,3 +19,16 @@
 .sidebar-block {
   width: 400px;
 }
+
+.quiz-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.change-question-button {
+  cursor: pointer;
+  width: 4em;
+  height: 4em;
+  color: gray;
+}

@@ -70,7 +70,32 @@
 }
 
 .quiz-card {
-  width: 50%;
-  height: 50%;
-  background-color: gray;
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+  background-color: rgb(233, 233, 233);
+  margin: 1em;
+  border-radius: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-card-top {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1em;
+  margin-right: 2em;
+  margin-bottom: -4em;
+}
+
+.quiz-card-content {
+  font-size: 36px;
+}
+
+.flip-card-button {
+  height: 2em;
+  width: 2em;
+  cursor: pointer;
 }
