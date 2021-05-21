@@ -1,4 +1,4 @@
-#Flash Cards
+# Flash Cards
 
 Build a front-end flashcards app. It should be React.js and does not need a back-end, it can re-initialize on each launch or store in local storage, either would be perfectly fine. You may want to consider Redux for persistence but this is not required. We don’t care about the design, we have a design team that provides us with design files, you should focus more of your time on proper code organization and architecture. I have included some screenshots of the flashcards feature in Bookshelf for reference.
 
