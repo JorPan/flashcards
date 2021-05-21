@@ -11,6 +11,13 @@
   margin-top: 8px;
   border-radius: 8px;
   box-shadow: 2px 1px 1px rgb(209, 209, 209);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.deck-title {
+  width: 90%;
 }
 
 .add-cards-button {
@@ -18,12 +25,15 @@
   cursor: pointer;
   font-weight: bold;
   color: #3751ad;
+  width: 30%;
 }
 
 .edit-deck {
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 24px;
 }
 
 .edit-deck-name {
@@ -32,4 +42,15 @@
 
 .remove-deck-button {
   cursor: pointer;
+}
+
+.view-deck-button {
+  cursor: pointer;
+}
+
+.deck-buttons {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

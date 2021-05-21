@@ -1,5 +1,6 @@
 export const initialDecks = [
   {
+    id: 0,
     data: { name: "I'm no math magician or anything" },
     content: [
       { front: "2+2", back: "4" },
@@ -15,6 +16,7 @@ export const initialDecks = [
     ],
   },
   {
+    id: 1,
     data: { name: "Philosophology" },
     content: [
       {
