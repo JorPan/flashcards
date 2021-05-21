@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 100%;
+  background-color: #f0f0f1;
+  color: #000000;
+}
+
+.sidebar-icon-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60px;
+  height: 100%;
+  background-color: #273258;
+  color: #ffffff;
+}
+
+.sidebar-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  padding-left: 64px;
+}
+
+.sidebar-icon {
+  width: 2em;
+  height: 2em;
+  margin-right: 8px;
+  cursor: pointer;
+  user-select: none;
+  margin: 1em;
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+}
+
+.add-deck-button {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.separator {
+  height: 1px;
+  width: 100%;
+  background-color: black;
+}

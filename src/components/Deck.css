@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
+
+.deck {
+  background: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 300px;
+  height: 200px;
+  margin-left: 80px;
+  margin-top: 8px;
+  border-radius: 8px;
+  box-shadow: 2px 1px 1px rgb(209, 209, 209);
+}
+
+.add-cards-button {
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #3751ad;
+}
