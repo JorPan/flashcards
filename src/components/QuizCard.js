@@ -11,8 +11,12 @@ export default function QuizCard({
   const [cardContent, setCardContent] = useState(selectedDeck.content);
 
   useEffect(() => {
+    setCardSide("front");
+  }, [setCardSide]);
+
+  useEffect(() => {
     setCardContent(selectedDeck.content[questionNumber]);
-  }, [cardContent, questionNumber, selectedDeck.content]);
+  }, [cardContent, questionNumber, selectedDeck]);
 
   const flipCard = () => {
     cardSide === "front" ? setCardSide("back") : setCardSide("front");
@@ -24,10 +28,16 @@ export default function QuizCard({
         <GiRapidshareArrow className="flip-card-button" onClick={flipCard} />
       </div>
       <div className="quiz-card-content">
-        {cardSide === "front" ? (
-          <p>{cardContent.front}</p>
+        {selectedDeck.content.length === 0 ? (
+          <p>Add questions to this deck to study</p>
         ) : (
-          <p>{cardContent.back}</p>
+          <div>
+            {cardSide === "front" ? (
+              <p>{cardContent.front}</p>
+            ) : (
+              <p>{cardContent.back}</p>
+            )}
+          </div>
         )}
       </div>
       <div className="quiz-card-bottom"></div>

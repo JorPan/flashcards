@@ -1,12 +1,18 @@
 import { useState } from "react";
 import QuizCard from "../components/QuizCard";
 import { BsCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
+import { FaRegSmileBeam, FaRegFrown } from "react-icons/fa";
 import "./HomePage.css";
 
-export default function HomePage({ quizMode, selectedDeck }) {
-  const [questionNumber, setQuestionNumber] = useState(0);
-  const [cardSide, setCardSide] = useState("front");
-
+export default function HomePage({
+  quizMode,
+  selectedDeck,
+  setSelectedDeck,
+  questionNumber,
+  setQuestionNumber,
+  cardSide,
+  setCardSide,
+}) {
   const incrementQuestionNumber = () => {
     if (questionNumber < selectedDeck.content.length - 1) {
       setQuestionNumber(questionNumber + 1);
@@ -55,6 +61,14 @@ export default function HomePage({ quizMode, selectedDeck }) {
               className="change-question-button"
               onClick={incrementQuestionNumber}
             />
+          </div>
+          <div className="know-it-button-section">
+            <button className="know-it-button">
+              <FaRegSmileBeam />I know it
+            </button>
+            <button className="know-it-button">
+              <FaRegFrown />I don't know it
+            </button>
           </div>
         </div>
       )}

@@ -32,3 +32,20 @@
   height: 4em;
   color: gray;
 }
+
+.know-it-button-section {
+  display: flex;
+  justify-content: center;
+}
+
+.know-it-button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  height: 2em;
+  width: 20%;
+  margin: 1em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

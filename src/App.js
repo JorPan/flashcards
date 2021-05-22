@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import SideBar from "./containers/SideBar";
 import { initialDecks } from "./InitialData/InitialDecks";
@@ -9,10 +9,12 @@ function App() {
   const [addQuestionsView, setAddQuestionsView] = useState(false);
   const [selectedDeck, setSelectedDeck] = useState({});
   const [quizMode, setQuizMode] = useState(false);
+  const [questionNumber, setQuestionNumber] = useState(0);
+  const [cardSide, setCardSide] = useState("front");
 
-  // useEffect(() => {
-  //   setUserDecks(userDecks);
-  // }, [userDecks]);
+  useEffect(() => {
+    setUserDecks(userDecks);
+  }, [userDecks, selectedDeck]);
 
   // needs work!
   const removeDeck = (deckId) => {
@@ -26,7 +28,7 @@ function App() {
   const createNewDeck = () => {
     const newDeck = {
       id: userDecks.length,
-      data: { name: "Click here to name your deck" },
+      data: { name: "Click here to name your new deck" },
       content: [],
     };
     setUserDecks([...userDecks, newDeck]);
@@ -50,6 +52,10 @@ function App() {
         addCard={addCard}
         quizMode={quizMode}
         setQuizMode={setQuizMode}
+        questionNumber={questionNumber}
+        setQuestionNumber={setQuestionNumber}
+        cardSide={cardSide}
+        setCardSide={setCardSide}
       />
       <HomePage
         userDecks={userDecks}
@@ -57,6 +63,11 @@ function App() {
         quizMode={quizMode}
         setQuizMode={setQuizMode}
         selectedDeck={selectedDeck}
+        setSelectedDeck={setSelectedDeck}
+        questionNumber={questionNumber}
+        setQuestionNumber={setQuestionNumber}
+        cardSide={cardSide}
+        setCardSide={setCardSide}
       />
     </div>
   );

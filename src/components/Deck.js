@@ -15,6 +15,10 @@ export default function Deck({
   addCard,
   quizMode,
   setQuizMode,
+  questionNumber,
+  setQuestionNumber,
+  cardSide,
+  setCardSide,
 }) {
   const [deckTitle, setDeckTitle] = useState(deck.data.name);
   const [changingName, setChangingName] = useState(false);
@@ -79,6 +83,8 @@ export default function Deck({
         <BsBoxArrowInRight
           className="view-deck-button"
           onClick={() => {
+            setQuestionNumber(0);
+            setCardSide("front");
             setSelectedDeck(deck);
             setQuizMode(true);
           }}

@@ -18,6 +18,10 @@ export default function SideBar({
   addCard,
   quizMode,
   setQuizMode,
+  questionNumber,
+  setQuestionNumber,
+  cardSide,
+  setCardSide,
 }) {
   return (
     <div>
@@ -46,6 +50,10 @@ export default function SideBar({
               addCard={addCard}
               quizMode={quizMode}
               setQuizMode={setQuizMode}
+              questionNumber={questionNumber}
+              setQuestionNumber={setQuestionNumber}
+              setCardSide={setCardSide}
+              cardSide={cardSide}
             />
           ))}
         </div>
