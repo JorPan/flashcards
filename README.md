@@ -27,6 +27,8 @@ Click on a trashcan to delete a card or a deck.
 
 Decks and cards persist through local state, so there is a small button bottom right to simply clear local storage and re-initialize the application.
 
-# Thank you SO much for your time, and I look forward to connecting with you again soon!
+
+
+Thank you SO much for your time, and I look forward to connecting with you again soon!
 
 -Jordan Panasewicz
