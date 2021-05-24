@@ -11,6 +11,10 @@ export default function HomePage({
   setQuestionNumber,
   cardSide,
   setCardSide,
+  knowItCards,
+  setKnowItCards,
+  dontKnowItCards,
+  setDontKnowItCards,
 }) {
   // Increments the question number to display the next card's front side
   const incrementQuestionNumber = () => {
@@ -64,15 +68,32 @@ export default function HomePage({
             />
           </div>
           <div className="know-it-button-section">
-            <button className="know-it-button">
+            <button
+              className="know-it-button"
+              onClick={() =>
+                setKnowItCards([
+                  ...knowItCards,
+                  selectedDeck.content[questionNumber],
+                ])
+              }
+            >
               <FaRegSmileBeam />I know it
             </button>
-            <button className="know-it-button">
+            <button
+              className="know-it-button"
+              onClick={() =>
+                setDontKnowItCards([
+                  ...dontKnowItCards,
+                  selectedDeck.content[questionNumber],
+                ])
+              }
+            >
               <FaRegFrown />I don't know it
             </button>
           </div>
         </div>
       )}
+
       <Footer />
     </div>
   );

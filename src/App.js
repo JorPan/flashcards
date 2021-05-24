@@ -11,6 +11,8 @@ function App() {
   const [quizMode, setQuizMode] = useState(false);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [cardSide, setCardSide] = useState("front");
+  const [knowItCards, setKnowItCards] = useState([]);
+  const [dontKnowItCards, setDontKnowItCards] = useState([]);
 
   useEffect(() => {
     const data = localStorage.getItem("deck-list");
@@ -61,8 +63,7 @@ function App() {
   // Removes the selected card from the selected deck
   const deleteCard = (currentCard) => {
     const filteredCardList = selectedDeck.content.filter(
-      (card) =>
-        card.front !== currentCard.front && card.back !== currentCard.back
+      (card) => card.front !== currentCard.front
     );
     userDecks.filter((deck) => deck.id !== selectedDeck.id);
 
@@ -139,6 +140,10 @@ function App() {
         cardSide={cardSide}
         setCardSide={setCardSide}
         deleteCard={deleteCard}
+        knowItCards={knowItCards}
+        setKnowItCards={setKnowItCards}
+        dontKnowItCards={dontKnowItCards}
+        setDontKnowItCards={setDontKnowItCards}
       />
     </div>
   );
