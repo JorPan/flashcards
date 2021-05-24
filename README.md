@@ -29,3 +29,6 @@ Decks and cards persist through local state, so there is a small button bottom r
 
 
 
+Thank you SO much for your time, and I look forward to connecting with you again soon! 
+
+-Jordan Panasewicz
