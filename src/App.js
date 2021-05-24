@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import SideBar from "./containers/SideBar";
 import { initialDecks } from "./InitialData/InitialDecks";
@@ -19,7 +19,7 @@ function App() {
     } else {
       setUserDecks(initialDecks);
     }
-  }, [setUserDecks]);
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("deck-list", JSON.stringify(userDecks));
@@ -40,16 +40,22 @@ function App() {
     const newCard = { front: "Front Side", back: "Back Side" };
     const newCardList = [...selectedDeck.content, newCard];
     const index = selectedDeck.id;
+
     const updatedDeckData = {
       id: index,
       data: selectedDeck.data,
       content: newCardList,
     };
+
     setSelectedDeck(updatedDeckData);
 
-    userDecks
+    const newDecks = [...userDecks];
+
+    newDecks
       .filter((deck) => deck.id !== selectedDeck.id)
       .splice(index, 1, updatedDeckData);
+
+    setUserDecks(newDecks);
   };
 
   // Removes the selected card from the selected deck
@@ -58,9 +64,8 @@ function App() {
       (card) =>
         card.front !== currentCard.front && card.back !== currentCard.back
     );
-    const filteredDecks = userDecks.filter(
-      (deck) => deck.id !== selectedDeck.id
-    );
+    userDecks.filter((deck) => deck.id !== selectedDeck.id);
+
     const newSelectedDeck = {
       id: selectedDeck.id,
       data: selectedDeck.data,
@@ -68,7 +73,10 @@ function App() {
     };
     setSelectedDeck(newSelectedDeck);
 
-    userDecks.splice(selectedDeck.id, 1, newSelectedDeck);
+    const newDecks = [...userDecks];
+    newDecks.splice(selectedDeck.id, 1, newSelectedDeck);
+
+    setUserDecks(newDecks);
   };
 
   //Updates the selected card to user inputs
@@ -85,16 +93,17 @@ function App() {
     };
     setSelectedDeck(newSelectedDeckData);
 
-    userDecks.splice(selectedDeck.id, 1, newSelectedDeckData);
+    const newDecks = [...userDecks];
+
+    newDecks.splice(selectedDeck.id, 1, newSelectedDeckData);
+
+    setUserDecks(newDecks);
   };
 
   // Removes the selected deck from deck list state: userDecks
   const removeDeck = (deck) => {
-    const updatedDeckList = userDecks.filter(
-      (currentDeck) => currentDeck.id !== deck.id
-    );
-    // const updatedDeckList = userDecks.splice(deck.id, 1);
-    console.log(updatedDeckList);
+    const updatedDeckList = [...userDecks];
+    updatedDeckList.splice(deck.id, 1);
     setUserDecks(updatedDeckList);
   };
 
@@ -125,7 +134,6 @@ function App() {
         quizMode={quizMode}
         setQuizMode={setQuizMode}
         selectedDeck={selectedDeck}
-        setSelectedDeck={setSelectedDeck}
         questionNumber={questionNumber}
         setQuestionNumber={setQuestionNumber}
         cardSide={cardSide}

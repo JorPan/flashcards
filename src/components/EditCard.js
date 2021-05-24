@@ -4,7 +4,6 @@ import "./Card.css";
 
 export default function EditCard({
   currentCard,
-  editCard,
   setEditCard,
   updateCard,
   cardNumber,

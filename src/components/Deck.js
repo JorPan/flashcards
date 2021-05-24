@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { GoTrashcan } from "react-icons/go";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import "./Deck.css";
@@ -6,18 +6,12 @@ import "./Deck.css";
 export default function Deck({
   deck,
   removeDeck,
-  addQuestionsView,
   setAddQuestionsView,
-  selectedDeck,
   setSelectedDeck,
   userDecks,
   setUserDecks,
-  addCard,
-  quizMode,
   setQuizMode,
-  questionNumber,
   setQuestionNumber,
-  cardSide,
   setCardSide,
 }) {
   const [deckTitle, setDeckTitle] = useState(deck.data.name);
@@ -83,9 +77,8 @@ export default function Deck({
         <GoTrashcan
           className="remove-deck-button"
           onClick={() => {
-            // setSelectedDeck();
-            setQuizMode(false);
             removeDeck(deck);
+            setQuizMode(false);
           }}
         />
         <BsBoxArrowInRight

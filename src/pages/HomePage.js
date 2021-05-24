@@ -7,7 +7,6 @@ import "./HomePage.css";
 export default function HomePage({
   quizMode,
   selectedDeck,
-  setSelectedDeck,
   questionNumber,
   setQuestionNumber,
   cardSide,

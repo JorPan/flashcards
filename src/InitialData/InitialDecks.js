@@ -19,18 +19,18 @@ export const initialDecks = [
       },
     ],
   },
-  {
-    id: 1,
-    data: { name: "Philosophology" },
-    content: [
-      {
-        front: "What is the meaning of life?",
-        back: "..that's up for you to decide!",
-      },
-      {
-        front: "Who is Rene Descartes?",
-        back: "The first 'modern' philosopher",
-      },
-    ],
-  },
+  // {
+  //   id: 1,
+  //   data: { name: "Philosophology" },
+  //   content: [
+  //     {
+  //       front: "What is the meaning of life?",
+  //       back: "..that's up for you to decide!",
+  //     },
+  //     {
+  //       front: "Who is Rene Descartes?",
+  //       back: "The first 'modern' philosopher",
+  //     },
+  //   ],
+  // },
 ];
