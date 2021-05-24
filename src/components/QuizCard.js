@@ -8,7 +8,9 @@ export default function QuizCard({
   cardSide,
   setCardSide,
 }) {
-  const [cardContent, setCardContent] = useState(selectedDeck.content);
+  const [cardContent, setCardContent] = useState(
+    selectedDeck.content[questionNumber]
+  );
 
   useEffect(() => {
     setCardSide("front");

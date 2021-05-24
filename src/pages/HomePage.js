@@ -1,7 +1,7 @@
-import { useState } from "react";
 import QuizCard from "../components/QuizCard";
 import { BsCaretLeftFill, BsFillCaretRightFill } from "react-icons/bs";
 import { FaRegSmileBeam, FaRegFrown } from "react-icons/fa";
+import Footer from "../containers/Footer";
 import "./HomePage.css";
 
 export default function HomePage({
@@ -13,6 +13,7 @@ export default function HomePage({
   cardSide,
   setCardSide,
 }) {
+  // Increments the question number to display the next card's front side
   const incrementQuestionNumber = () => {
     if (questionNumber < selectedDeck.content.length - 1) {
       setQuestionNumber(questionNumber + 1);
@@ -22,6 +23,7 @@ export default function HomePage({
     setCardSide("front");
   };
 
+  // Decrements the question number to display the previous card's front side
   const decrementQuestionNumber = () => {
     if (questionNumber === 0) {
       setQuestionNumber(selectedDeck.content.length - 1);
@@ -72,6 +74,7 @@ export default function HomePage({
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 }

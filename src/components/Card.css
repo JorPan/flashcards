@@ -6,7 +6,7 @@
   font-weight: bold;
   font-size: 16px;
   width: 300px;
-  height: 200px;
+  height: 250px;
   margin-left: 80px;
   margin-top: 8px;
   border-radius: 8px;
@@ -98,4 +98,16 @@
   height: 2em;
   width: 2em;
   cursor: pointer;
+}
+
+.edit-card-buttons {
+  display: flex;
+  margin-bottom: 0.5em;
+  font-family: "Roboto", sans-serif;
+}
+
+.edit-card-input {
+  width: 200px;
+  text-align: center;
+  margin-bottom: 2em;
 }

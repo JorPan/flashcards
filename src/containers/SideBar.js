@@ -1,8 +1,8 @@
+import { useState, useEffect } from "react";
 import { AiFillPlayCircle } from "react-icons/ai";
 import { HiPlusCircle, HiStop } from "react-icons/hi";
 import Deck from "../components/Deck";
 import IconBar from "./IconBar";
-import EditCard from "../components/EditCard";
 import Card from "../components/Card";
 import "./SideBar.css";
 
@@ -22,7 +22,21 @@ export default function SideBar({
   setQuestionNumber,
   cardSide,
   setCardSide,
+  deleteCard,
+  updateCard,
 }) {
+  //set & get userDecks as "deck-list" to local storage
+  // useEffect(() => {
+  //   const data = localStorage.getItem("deck-list");
+  //   if (data) {
+  //     setUserDecks(JSON.parse(data));
+  //   }
+  // }, [setUserDecks]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("deck-list", JSON.stringify(userDecks));
+  // });
+
   return (
     <div>
       {addQuestionsView === false ? (
@@ -84,7 +98,17 @@ export default function SideBar({
           <div className="separator"></div>
           {selectedDeck
             ? selectedDeck.content.map((currentCard, i) => (
-                <Card key={i} currentCard={currentCard} cardNumber={i} />
+                <Card
+                  setUserDecks={setUserDecks}
+                  selectedDeck={selectedDeck}
+                  setSelectedDeck={setSelectedDeck}
+                  key={i}
+                  currentCard={currentCard}
+                  cardNumber={i}
+                  deleteCard={deleteCard}
+                  updateCard={updateCard}
+                  setCardSide={setCardSide}
+                />
               ))
             : null}
         </div>

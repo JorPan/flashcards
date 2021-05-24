@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { GoTrashcan } from "react-icons/go";
 import { BsBoxArrowInRight } from "react-icons/bs";
 import "./Deck.css";
@@ -23,14 +23,17 @@ export default function Deck({
   const [deckTitle, setDeckTitle] = useState(deck.data.name);
   const [changingName, setChangingName] = useState(false);
 
+  //sets ability to edit deck title
   const changeDeckName = () => {
     setChangingName(true);
   };
 
+  //changes the current deck title
   const titleChange = (event) => {
     setDeckTitle(event.target.value);
   };
 
+  //handles title submit and updates state of userDecks
   const titleSubmit = () => {
     setChangingName(false);
     const filteredDecks = userDecks.filter(
@@ -68,8 +71,9 @@ export default function Deck({
       <p
         className="add-cards-button"
         onClick={() => {
-          setAddQuestionsView(true);
+          setCardSide("front");
           setSelectedDeck(deck);
+          setAddQuestionsView(true);
         }}
       >
         Add cards
@@ -78,7 +82,11 @@ export default function Deck({
       <div className="deck-buttons">
         <GoTrashcan
           className="remove-deck-button"
-          onClick={() => removeDeck(deck.id)}
+          onClick={() => {
+            // setSelectedDeck();
+            setQuizMode(false);
+            removeDeck(deck);
+          }}
         />
         <BsBoxArrowInRight
           className="view-deck-button"
