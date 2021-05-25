@@ -17,7 +17,7 @@ There is already one small deck loaded into the app upon initialization.
 
 Click on the arrow towards the bottom of a deck to practice it in quiz mode.
 
-Click on the plus sign in the sidebar to create a new deck. Click the title area to update the decks title, and click save.
+Click on the plus sign at the top of the sidebar to create a new deck. Click the title area to update the decks title, and click save.
 
 Click on the add cards button of a deck to create new cards in that deck, click the plus sign at the top to create a new card, and the pencil on the card to give it content on the front and back. If you do not add content to a card, it will not be saved.
 
