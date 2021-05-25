@@ -21,6 +21,8 @@ Click on the plus sign in the sidebar to create a new deck. Click the title area
 
 Click on the add cards button of a deck to create new cards in that deck, click the plus sign at the top to create a new card, and the pencil on the card to give it content on the front and back. If you do not add content to a card, it will not be saved.
 
+While editing a card's content, the swap button in the middle will flip the front and the back of the card. 
+
 You can also click the play button at the top of a deck to enter quiz mode, or press stop to end the quiz. The Home button top left will also end the quiz and bring you back to your decks.
 
 Click on a trashcan to delete a card or a deck.
