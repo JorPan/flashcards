@@ -25,7 +25,7 @@ You can also click the play button at the top of a deck to enter quiz mode, or p
 
 Click on a trashcan to delete a card or a deck.
 
-Decks and cards persist through local state, so there is a small button bottom right to simply clear local storage and re-initialize the application.
+Decks and cards persist through local storage, so there is a small button bottom right to simply clear local storage and re-initialize the application.
 
 
 
