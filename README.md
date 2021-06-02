@@ -7,7 +7,7 @@ This simple application allows users to create, edit, and view flashcards to hel
 # Installation & Setup
 
 Clone this repo & copy the clone link.
-In your terminal, type "git clone [paste the link]  [name your project file]"
+In your terminal, type "git clone [paste the link]  [name your project file]"
 CD into the project file.
 $ npm install
 $ npm start
