@@ -14,6 +14,7 @@ function App() {
   const [knowItCards, setKnowItCards] = useState([]);
   const [dontKnowItCards, setDontKnowItCards] = useState([]);
 
+  // retrieves persisted decks through local storage
   useEffect(() => {
     const data = localStorage.getItem("deck-list");
     if (data) {
@@ -23,6 +24,7 @@ function App() {
     }
   }, []);
 
+  // persists decks to local storage
   useEffect(() => {
     localStorage.setItem("deck-list", JSON.stringify(userDecks));
   });
