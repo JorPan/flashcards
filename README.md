@@ -2,7 +2,9 @@
 
 Welcome to Flashcards!
 
-This simple application allows users to create, edit, and view flashcards to help with learning.
+This application allows users to create, edit, and view flashcards to help with learning.
+
+This application only contains a front end, and data persists through local storage.
 
 # Installation & Setup
 
