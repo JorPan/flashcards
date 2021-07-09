@@ -18,6 +18,10 @@ Coming SOON!
 - "npm install"
 - "npm start"
 
+# Technologies
+- React
+- LocalStorage
+
 # Features & Use
 
 - There is already one small deck loaded into the app upon initialization.
