@@ -8,7 +8,7 @@ This application only contains a front end, and data persists through local stor
 
 # Demo Video
 
-Coming SOON! 
+[Click here](https://youtu.be/4qo-jDFot3c)
 
 # Installation & Setup
 
