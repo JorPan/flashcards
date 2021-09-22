@@ -1,6 +1,6 @@
 # Flash Cards
 
-Welcome to Flashcards!
+Welcome to "Flashers" - a flashcards application. 
 
 This application allows users to create, edit, and view flashcards to help with learning.
 
