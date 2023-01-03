@@ -111,3 +111,36 @@
   text-align: center;
   margin-bottom: 2em;
 }
+
+.result-icon {
+  margin: auto;
+  margin-bottom: 20px;
+  width: 20%;
+  background-size: cover;
+}
+
+input {
+  font-family: "Roboto", sans-serif;
+  margin: auto;
+  width: 250px;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  outline: none;
+}
+
+
+.buttonCards {
+  font-family: "Roboto", sans-serif;
+  font-weight: bolder;
+  margin: auto;
+  width: 230px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buttonCards:hover {
+  background-color: lightsteelblue;
+}
