@@ -58,3 +58,14 @@
   display: flex;
   justify-content: center;
 }
+
+.buttonCards {
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.buttonCards:hover {
+  background-color: lightsteelblue;
+}
